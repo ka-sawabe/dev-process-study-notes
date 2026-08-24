@@ -1,0 +1,55 @@
+Table アカウント情報 {
+    アカウントID    int [pk]
+    メールアドレス  varchar
+    パスワード      varchar
+    利用者区分      int
+    作成日時        datetime
+    作成者          int     [note: 'アカウント情報.アカウントIDを参照する']
+}
+Table 生徒情報 {
+    アカウントID      int [pk]          
+    氏名_姓           varchar 
+    氏名_名           varchar 
+    電話番号          varchar 
+    講師アカウントID  int     
+    楽器コース        int     
+    作成日時          datetime
+    作成者            int     [note: 'アカウント情報.アカウントIDを参照する']
+}
+Table 講師スタッフ情報 {
+    アカウントID      int [pk]     
+    氏名_姓           varchar 
+    氏名_名           varchar 
+    電話番号          varchar 
+    作成日時          datetime
+    作成者            int     [note: 'アカウント情報.アカウントIDを参照する']
+}
+Table 講師担当コース情報 {
+    アカウントID_複合PK      int [pk]     
+    担当楽器コース_複合PK     int [pk] 
+    作成日時          datetime
+    作成者            int     [note: 'アカウント情報.アカウントIDを参照する'] 
+}
+Table レッスンスケジュール {
+レッスン枠ID      varchar  
+講師アカウントID  int
+楽器コース        varchar  
+開始日時          datetime 
+生徒アカウントID  int      
+作成日時          datetime 
+作成者            int     [note: 'アカウント情報.アカウントIDを参照する']
+更新日時          datetime 
+更新者            int     [note: 'アカウント情報.アカウントIDを参照する']  
+}
+
+Ref: 生徒情報.アカウントID - アカウント情報.アカウントID
+Ref: 講師スタッフ情報.アカウントID - アカウント情報.アカウントID
+Ref: 生徒情報.講師アカウントID > 講師スタッフ情報.アカウントID
+Ref: 生徒情報.講師アカウントID > 講師担当コース情報.アカウントID_複合PK
+Ref: 生徒情報.楽器コース > 講師担当コース情報.担当楽器コース_複合PK
+Ref: 講師担当コース情報.アカウントID_複合PK > 講師スタッフ情報.アカウントID  
+
+Ref: レッスンスケジュール.講師アカウントID > 講師スタッフ情報.アカウントID
+Ref: レッスンスケジュール.講師アカウントID >  講師担当コース情報.アカウントID_複合PK 
+Ref: レッスンスケジュール.楽器コース > 講師担当コース情報.担当楽器コース_複合PK
+Ref: レッスンスケジュール.生徒アカウントID > 生徒情報.アカウントID

@@ -1,0 +1,245 @@
+{
+  "version": "3.0.0",
+  "darkMode": false,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "relationshipMode": "All",
+    "tablePositions": [
+      {
+        "name": "アカウント情報",
+        "schemaName": "public",
+        "x": 697.2598917988789,
+        "y": 149.0075896070827
+      },
+      {
+        "name": "生徒情報",
+        "schemaName": "public",
+        "x": 402.3941749824706,
+        "y": 298.1729660309019
+      },
+      {
+        "name": "講師スタッフ情報",
+        "schemaName": "public",
+        "x": 1011.4607781348565,
+        "y": 149.0075896070827
+      },
+      {
+        "name": "講師担当コース情報",
+        "schemaName": "public",
+        "x": 999.4468853515241,
+        "y": 426.1729660309019
+      },
+      {
+        "name": "レッスンスケジュール",
+        "schemaName": "public",
+        "x": 1400,
+        "y": 392
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": [
+      {
+        "firstFieldNames": [
+          "アカウントID"
+        ],
+        "firstTableName": "生徒情報",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "アカウント情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "firstEndpointSide": "right",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "アカウントID"
+        ],
+        "firstTableName": "講師スタッフ情報",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "アカウント情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "講師アカウントID"
+        ],
+        "firstTableName": "レッスンスケジュール",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "講師スタッフ情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "firstEndpointSide": "right",
+        "checkPoints": [
+          {
+            "x": 1644.2577005047356,
+            "y": 473.8658792591089
+          },
+          {
+            "x": 1644.2577005047356,
+            "y": 197.0075896070827
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "生徒アカウントID"
+        ],
+        "firstTableName": "レッスンスケジュール",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "生徒情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "firstEndpointSide": "right",
+        "secondEndpointSide": "left",
+        "checkPoints": [
+          {
+            "x": 1640.1627229534656,
+            "y": 569.8658792591089
+          },
+          {
+            "x": 1640.1627229534656,
+            "y": 751.5408750612214
+          },
+          {
+            "x": 358.36638941580605,
+            "y": 751.5408750612214
+          },
+          {
+            "x": 358.36638941580605,
+            "y": 346.1729660309019
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "講師アカウントID"
+        ],
+        "firstTableName": "生徒情報",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "講師スタッフ情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": [
+          {
+            "x": 957.586944622684,
+            "y": 474.1729660309019
+          },
+          {
+            "x": 957.586944622684,
+            "y": 197.0075896070827
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "講師アカウントID"
+        ],
+        "firstTableName": "生徒情報",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID_複合PK"
+        ],
+        "secondTableName": "講師担当コース情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "楽器コース"
+        ],
+        "firstTableName": "生徒情報",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "担当楽器コース_複合PK"
+        ],
+        "secondTableName": "講師担当コース情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "アカウントID_複合PK"
+        ],
+        "firstTableName": "講師担当コース情報",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID"
+        ],
+        "secondTableName": "講師スタッフ情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": [
+          {
+            "x": 1298.629188701521,
+            "y": 474.1729660309019
+          },
+          {
+            "x": 1298.629188701521,
+            "y": 197.0075896070827
+          }
+        ]
+      },
+      {
+        "firstFieldNames": [
+          "楽器コース"
+        ],
+        "firstTableName": "レッスンスケジュール",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "担当楽器コース_複合PK"
+        ],
+        "secondTableName": "講師担当コース情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "講師アカウントID"
+        ],
+        "firstTableName": "レッスンスケジュール",
+        "firstSchemaName": "public",
+        "firstRelation": "*",
+        "secondFieldNames": [
+          "アカウントID_複合PK"
+        ],
+        "secondTableName": "講師担当コース情報",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      }
+    ]
+  },
+  "views": {}
+}
